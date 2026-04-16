@@ -1,0 +1,10 @@
+services:
+  agent:
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - ./tiny-agent.js:/app/tiny-agent.js
+    env_file: .env
+    command: node tiny-agent.js
+    stdin_open: true
+    tty: true
